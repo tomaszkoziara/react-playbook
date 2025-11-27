@@ -9,16 +9,16 @@ const RootLayout = () => (
         E01 (useState)
       </Link>
       <Link to="/e02">
-        E02 (useEffect)
+        E02 (useEffect with and without dependencies)
       </Link>
       <Link to="/e03">
-        E03
+        E03 (useEffect mount and cleanup)
       </Link>
       <Link to="/e04">
-        E04
+        E04 (useRef)
       </Link>
       <Link to="/e05">
-        E05
+        E05 (useMemo)
       </Link>
     </div>
     <hr />
