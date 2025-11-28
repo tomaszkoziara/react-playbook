@@ -26,6 +26,9 @@ const RootLayout = () => (
       <Link to="/e07">
         E07 (useContext)
       </Link>
+      <Link to="/e08">
+        E08 (custom hook)
+      </Link>
     </div>
     <hr />
     <Outlet />

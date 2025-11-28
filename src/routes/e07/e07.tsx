@@ -3,7 +3,7 @@ import './e07.css';
 
 const ThemeContext = createContext({
   theme: 'light',
-  setTheme: (theme: string): void => { throw new Error('Function not implemented.') },
+  setTheme: (_theme: string): void => { throw new Error('Function not implemented.') },
 })
 
 function E07() {
