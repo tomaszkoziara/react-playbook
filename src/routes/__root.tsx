@@ -20,6 +20,12 @@ const RootLayout = () => (
       <Link to="/e05">
         E05 (useMemo)
       </Link>
+      <Link to="/e06">
+        E06 (useCallback)
+      </Link>
+      <Link to="/e07">
+        E07 (useContext)
+      </Link>
     </div>
     <hr />
     <Outlet />

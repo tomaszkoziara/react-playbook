@@ -33,7 +33,7 @@ function E02() {
       <h2>Check logs in the console</h2>
       <ul>
         <li>useEffect without dependencies is triggered only once on mount</li>
-        <li>useEffect with dependencies is triggered whenever the dependency changes</li>
+        <li>useEffect with dependencies is triggered whenever the dependency changes (logs may be compacted)</li>
       </ul>
     </div>
   )

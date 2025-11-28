@@ -26,6 +26,10 @@ function E04() {
         <button onClick={handleDecrement}>Decrement</button>
         <button onClick={handleShowValue}>Show value</button>
       </div>
+      <ul>
+        <li>useRef is not reactive, so the value is not updated when the counter is changed</li>
+        <li>click 'Show value' to see the current value of the counter</li>
+      </ul>
 
     </div>
   )
