@@ -10,6 +10,7 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as E09IndexRouteRouteImport } from './routes/e09/index.route'
 import { Route as E08IndexRouteRouteImport } from './routes/e08/index.route'
 import { Route as E07IndexRouteRouteImport } from './routes/e07/index.route'
 import { Route as E06IndexRouteRouteImport } from './routes/e06/index.route'
@@ -22,6 +23,11 @@ import { Route as E01IndexRouteRouteImport } from './routes/e01/index.route'
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const E09IndexRouteRoute = E09IndexRouteRouteImport.update({
+  id: '/e09/',
+  path: '/e09',
   getParentRoute: () => rootRouteImport,
 } as any)
 const E08IndexRouteRoute = E08IndexRouteRouteImport.update({
@@ -75,6 +81,7 @@ export interface FileRoutesByFullPath {
   '/e06': typeof E06IndexRouteRoute
   '/e07': typeof E07IndexRouteRoute
   '/e08': typeof E08IndexRouteRoute
+  '/e09': typeof E09IndexRouteRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -86,6 +93,7 @@ export interface FileRoutesByTo {
   '/e06': typeof E06IndexRouteRoute
   '/e07': typeof E07IndexRouteRoute
   '/e08': typeof E08IndexRouteRoute
+  '/e09': typeof E09IndexRouteRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -98,6 +106,7 @@ export interface FileRoutesById {
   '/e06/': typeof E06IndexRouteRoute
   '/e07/': typeof E07IndexRouteRoute
   '/e08/': typeof E08IndexRouteRoute
+  '/e09/': typeof E09IndexRouteRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -111,6 +120,7 @@ export interface FileRouteTypes {
     | '/e06'
     | '/e07'
     | '/e08'
+    | '/e09'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -122,6 +132,7 @@ export interface FileRouteTypes {
     | '/e06'
     | '/e07'
     | '/e08'
+    | '/e09'
   id:
     | '__root__'
     | '/'
@@ -133,6 +144,7 @@ export interface FileRouteTypes {
     | '/e06/'
     | '/e07/'
     | '/e08/'
+    | '/e09/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -145,6 +157,7 @@ export interface RootRouteChildren {
   E06IndexRouteRoute: typeof E06IndexRouteRoute
   E07IndexRouteRoute: typeof E07IndexRouteRoute
   E08IndexRouteRoute: typeof E08IndexRouteRoute
+  E09IndexRouteRoute: typeof E09IndexRouteRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -154,6 +167,13 @@ declare module '@tanstack/react-router' {
       path: '/'
       fullPath: '/'
       preLoaderRoute: typeof IndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/e09/': {
+      id: '/e09/'
+      path: '/e09'
+      fullPath: '/e09'
+      preLoaderRoute: typeof E09IndexRouteRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/e08/': {
@@ -225,6 +245,7 @@ const rootRouteChildren: RootRouteChildren = {
   E06IndexRouteRoute: E06IndexRouteRoute,
   E07IndexRouteRoute: E07IndexRouteRoute,
   E08IndexRouteRoute: E08IndexRouteRoute,
+  E09IndexRouteRoute: E09IndexRouteRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

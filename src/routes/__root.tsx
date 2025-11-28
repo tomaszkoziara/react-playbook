@@ -29,6 +29,9 @@ const RootLayout = () => (
       <Link to="/e08">
         E08 (custom hook)
       </Link>
+      <Link to="/e09">
+        E09 (React.memo)
+      </Link>
     </div>
     <hr />
     <Outlet />
